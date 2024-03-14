@@ -1,5 +1,4 @@
 # opening file on vscode
-
 ```
 git clone https://gitexercises.fracz.com/git/exercises.git  
 cd exercises  
@@ -90,6 +89,7 @@ we can use the given command to commit the date properties.
 git commit –amend –no-edit –date= “1987-01-01”
 ```
 # Fix-old-typo
+first, rebase in interaction mode, then open in editor, make the changes and add for staging. then fix the old typos, open editor and resolve the merge clash.
 ```
 git rebase -i
 vim file.txt
