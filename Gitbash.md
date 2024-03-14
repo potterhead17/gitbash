@@ -65,21 +65,27 @@ git rebase hot-bugfix
 ```
 
 # Remove-ignored
+we can remove the file from working directory as well as the staging area by the given command.
 ```
 git rm ignored.txt
 git add .
 git commit -m“ignore”
 ```
 # Case-sensitive-filename
+we can rename the file within the git using the given command.
 ```
 git mv FILE.txt file.txt
 git commit -m“name changed”
+```
+# fix-typo
+first, we have to open the file, stag it and combine the staging and previous commits to a new commit.
+```
 cat file.txt
 git add .
 git commit –amend -m “Add Hello world”
 ```
 # Forge-date
-
+we can use the given command to commit the date properties.
 ```
 git commit –amend –no-edit –date= “1987-01-01”
 ```
