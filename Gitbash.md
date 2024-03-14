@@ -8,72 +8,80 @@ git config user.email "soneya17x@gmail.com"
 ./configure.sh  
 ```
 # Master
+starting the exercise and pushing by verifying 
 ```
-Git start  
-Git verify
+git start  
+git verify
 ```
 
 # Commit-one-file
+there are two files in directory, to commit one file, first we have to add it in stagging area and then commit it.
 ```
-Git add A.txt
-Git commit -m“changing one file”
+git add A.txt
+git commit -m“changing one file”
 ```
 # commit-one-file-stagged
+both files are stagged, so we can commit one by the given command having file name in the end.
 ```
-Git commit -m “one stagged file” A.txt
+git commit -m “one stagged file” A.txt
 ```
 # ignore-them
-we will write all the extentions we want to ignore (*.exe *.o *.jar libraries/ )
+first, we create a .gitignore file and add all the extentions we want to ignore (*.exe, *.o, *.jar, libraries/ )
 ```
-Touch .gitignore
-Git add .
-Git commit -m“ignore”
+touch .gitignore
+git add .
+git commit -m“ignore”
 ```
 # Chase-branch
+first, we have to check on which branch we are, and then we have to merge it
 ```
-Git merge escaped
+git branch
+git merge escaped
 ```
 # Merge-conflict
+first, we have to open text editor to make it interactive. Then, see the content and delete unnecessary info.
 ```
-Vim equation.txt
-Cat equation.txt
-Git add .
-Git commit -m“merge-conflict”
+vim equation.txt
+cat equation.txt
+git add .
+git commit -m“merge-conflict”
 ```
 # Save-your-work
+first, we have to save the current work without commiting, then open the file and remove bugs, then go back to our saved work and add the new line.
 ```
 git stash
-Cat bug.txt
-Git add .
-Git commit -m“bug fixed”
-Git stash pop
-Cat bug.txt
-Git add .
-Git commit -m“line added”
+cat bug.txt
+git add .
+git commit -m“bug fixed”
+git stash pop
+cat bug.txt
+git add .
+git commit -m“line added”
 ```
 # Change-branch-history
+we have to use this command which changes the history
 ```
-Git rebase hot-bugfix
+git rebase hot-bugfix
 ```
 
 # Remove-ignored
 ```
 git rm ignored.txt
-Git add .
-Git commit -m“ignore”
+git add .
+git commit -m“ignore”
 ```
 # Case-sensitive-filename
 ```
-Git mv FILE.txt file.txt
-Git commit -m“name changed”
-Cat file.txt
-Git add .
-Git commit –amend -m “Add Hello world”
+git mv FILE.txt file.txt
+git commit -m“name changed”
+cat file.txt
+git add .
+git commit –amend -m “Add Hello world”
 ```
 # Forge-date
 
 ```
-Git commit –amend –no-edit –date= “1987-01-01”
+git commit –amend –no-edit –date= “1987-01-01”
 ```
 # Fix-old-typo
 ```
