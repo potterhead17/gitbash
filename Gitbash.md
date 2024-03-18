@@ -38,7 +38,7 @@ git branch
 git merge escaped
 ```
 # Merge-conflict
-first, we have to open text editor to make it interactive. Then, see the content and delete unnecessary info.
+first, we have to open text editor to make it interactive and do the changes using the vim editor. Then, check the content by cat command then add and commit.
 ```
 vim equation.txt
 cat equation.txt
@@ -46,7 +46,7 @@ git add .
 git commit -m“merge-conflict”
 ```
 # Save-your-work
-first, we have to save the current work without commiting, then open the file and remove bugs, then go back to our saved work and add the new line.
+first, we have to save the current work without commiting by stash command, then open the file and remove bugs, then go back to our saved work by the stash pop command and add the new line.
 ```
 git stash
 cat bug.txt
@@ -58,7 +58,7 @@ git add .
 git commit -m“line added”
 ```
 # Change-branch-history
-we have to use this command which changes the history
+we have to use git rebase hot-bugfix from change-branch-history. So, that the bugfix commits from the hot-bugfix can be arranged on top of the change-branch-history.
 ```
 git rebase hot-bugfix
 ```
@@ -89,7 +89,7 @@ we can use the given command to commit the date properties.
 git commit –amend –no-edit –date= “1987-01-01”
 ```
 # Fix-old-typo
-first, rebase in interaction mode, then open in editor, make the changes and add for staging. then fix the old typos, open editor and resolve the merge clash.
+first, rebase in interactive mode, then open in editor, make the changes and add for staging. we will fix the typo in the commit message and then continue the rebase.
 ```
 git rebase -i
 vim file.txt
@@ -98,5 +98,5 @@ git commit –ammend
 git rebase –continue
 vim file.txt
 git add .
-git commit -m“conflict resolved”
+git commit -m “conflict resolved”
 ```
