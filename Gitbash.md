@@ -14,13 +14,13 @@ git verify
 ```
 
 # Commit-one-file
-there are two files in directory, to commit one file, first we have to add it in stagging area and then commit it.
+there are two files in directory, to commit one file, first we have to add it in staging area and then commit it.
 ```
 git add A.txt
 git commit -m“changing one file”
 ```
-# commit-one-file-stagged
-both files are stagged, so we can commit one by the given command having file name in the end.
+# commit-one-file-staged
+both files are staged, so we can commit one by the given command having file name in the end.
 ```
 git commit -m “one stagged file” A.txt
 ```
@@ -38,13 +38,22 @@ git branch
 git merge escaped
 ```
 # Merge-conflict
-first, we have to open text editor to make it interactive and do the changes using the vim editor. Then, check the content by cat command then add and commit.
-```
-vim equation.txt
-cat equation.txt
-git add .
-git commit -m“merge-conflict”
-```
+When we will try to directly merge the branch, we will get the following output.
+
+    $ git merge another-piece-of-work
+    Auto-merging equation.txt
+    CONFLICT (content): Merge conflict in equation.txt
+    Automatic merge failed; fix conflicts and then commit the result.
+
+Hence, we need to solve the conflict by hand.
+    
+    $ nano equation.txt
+
+Edit the text file by removing the conflict dividers and then writing what you wish to have in your commit.
+
+    $ git add equation.txt
+    $ git commit -m "merge"
+    
 # Save-your-work
 first, we have to save the current work without commiting by stash command, then open the file and remove bugs, then go back to our saved work by the stash pop command and add the new line.
 ```
